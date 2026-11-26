@@ -1,0 +1,23 @@
+# The 21 of the 80 cases that chose or checked the recto local solver's settings (its other 59 played no part):
+# the fibre-focus depths, its two results and its implementation's settings (`ways.py report / robust --exclude` this file).
+0139_w056__03_extend_side_k64_s40__L0        compared its ways (and the fibre-focus depths)
+0139_w056__04_extend_side_k40_s40__L1        compared its ways (and the fibre-focus depths)
+0139_w056__05_extend_side_k40_s80__L0        compared its ways (and the fibre-focus depths)
+0139_w058__00_fill_ring_k20_s40__L0          compared its ways (and the fibre-focus depths)
+0139_w058__04_extend_side_k40_s40__L0        compared its ways (and the fibre-focus depths)
+0139_w059__04_extend_side_k40_s40__L0        compared its ways (and the fibre-focus depths)
+0139_w058__06_extend_side_k40_s160__L0       timed
+0139_w059__02_fill_ring_k20_s160__L0         timed; its implementation's settings (speed and quality)
+0139_w057__01_fill_ring_k20_s80__L0          its implementation's settings
+0139_w057__04_extend_side_k64_s80__L2        its implementation's settings
+0139_w058__10_context_side_k20_s160__L1      its implementation's settings
+0139_w057__03_fill_ring_k20_s250__L0         its implementation's settings
+0139_w056__13_context_patches_k20_s160__L0   its implementation's settings
+0139_w058__05_extend_side_k64_s160__L1       its implementation's settings
+0139_w059__12_context_between_k20_s160__L1   its implementation's settings; its fallback checked
+0139_w056__05_extend_side_k64_s160__L0       checked
+0139_w059__06_extend_side_k40_s160__L2       checked
+0139_w058__09_context_side_k10_s160__L1      checked
+0139_w056__10_context_side_k20_s160__L0      checked
+0139_w057__10_context_side_k20_s160__L0      checked; its fallback checked
+0139_w059__04_extend_side_k64_s80__L1        checked; its fallback checked

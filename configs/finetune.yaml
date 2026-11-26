@@ -1,0 +1,19 @@
+# Fine-tuning SurfNet on your own verified sheet(s): from the base model (`--init`, weights only, a fresh
+# optimiser), 6,000 steps. The objects come from `surfnet add-sheet` (data.include = their ids). Without held-out
+# cells the validation below only monitors the fit on the training cells.
+base: train.yaml
+seed: 0
+data:
+  include: ["mysheet*"]
+  exclude: []
+  slots: 12
+crops:
+  curriculum: {c0: 0, c1: 0, c2: 1, p_A: 0.35, p_self: 0.5}    # straight to the final phase (self-conditioning on)
+optim: {lr: 1.5e-4, min_lr: 1.0e-5, wd: 0.05, warmup: 200, steps: 6000, clip: 1.0, cooldown_frac: 0.34, cooldown_min: 1000}
+train: {amp: bf16, ema: 0.998, log_every: 50, val_every: 3000, ckpt_every: 1000, patience: 99, min_steps: 6000, keep: 3,
+        async_data: true}
+val:
+  batches: 6
+  adjacent_batches: 2
+  sets:
+    - {name: fit, include: ["mysheet*"], split: train, regions: 12}

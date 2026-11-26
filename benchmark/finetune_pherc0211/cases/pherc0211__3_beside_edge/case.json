@@ -1,0 +1,35 @@
+{
+ "name": "pherc0211__3_beside_edge",
+ "surface": "pherc0211",
+ "set": "finetune",
+ "kind": "context",
+ "case": {
+  "kind": "context",
+  "layout": "side",
+  "known": 40,
+  "size": 93
+ },
+ "location": 2,
+ "origin": [
+  67,
+  24
+ ],
+ "extent": [
+  146,
+  168
+ ],
+ "spacing_vox": 12.5,
+ "spacing_from": "CT autocorrelation along the normals over the area, median of 474 of 579 sampled cells",
+ "pitch_um": 9.362,
+ "known_cells": 6885,
+ "target_cells": 5343,
+ "target_mm2": 12.03,
+ "methods": [
+  "E",
+  "G",
+  "S5"
+ ],
+ "description": "the untrained cells beside the trained edge on 91 rows, the third farthest from it left out; input: the trained cells within 40 cells of the area",
+ "ground_truth": "sheet.tifxyz (this case's window of it)",
+ "known_trained_share": 1.0
+}

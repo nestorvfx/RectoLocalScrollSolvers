@@ -1,0 +1,35 @@
+{
+ "name": "pherc0211__1_extension",
+ "surface": "pherc0211",
+ "set": "finetune",
+ "kind": "extend",
+ "case": {
+  "kind": "extend",
+  "layout": "side",
+  "known": 40,
+  "size": 80
+ },
+ "location": 0,
+ "origin": [
+  475,
+  236
+ ],
+ "extent": [
+  162,
+  97
+ ],
+ "spacing_vox": 13.0,
+ "spacing_from": "CT autocorrelation along the normals over the area, median of 576 of 665 sampled cells",
+ "pitch_um": 9.362,
+ "known_cells": 2920,
+ "target_cells": 5840,
+ "target_mm2": 13.15,
+ "methods": [
+  "E",
+  "G",
+  "S5"
+ ],
+ "description": "an extension up to 80 cells (3.8 mm) beyond the edge of the trained cells; input: the 40 trained cells above it",
+ "ground_truth": "sheet.tifxyz (this case's window of it)",
+ "known_trained_share": 1.0
+}

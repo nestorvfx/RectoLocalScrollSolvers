@@ -1,0 +1,69 @@
+# The benchmark (bench.py): SurfNet against GrowPatch on official ground truth SurfNet never trained on.
+# Paths are relative to the bucket. Cells are 47.46 um (80 cells = 3.8 mm).
+#
+# Ground truth: windings traced by the Vesuvius Challenge team (the team's own bucket, s3://philodemos/david/PHerc0139/
+# paths_ds2um), the same series as SurfNet's training windings w023-w055. w056-w057 were SurfNet's validation windings
+# and w058-w059 its test windings: none was ever trained on. Each is the "t2" registration (2026-11-16) onto the
+# 9.362 um volume, the volume whose m7 surface prediction and normal grids (GrowPatch's inputs) are published.
+# Not ground truth, not used: community prize submissions (the PHerc1447 w058 / w060 / w062 First Letters surfaces, the
+# PHerc0343 First Letters mesh), tracer outputs (auto_grown segments, e.g. PHerc0841), and PHerc0139 w041-w046
+# (inconsistent: w041 and w042 coincide, the published w046 copies w045).
+bucket: s3://vesuvius-challenge-open-data
+seed: 0
+locations: {primary: 3}
+surfaces:
+  - name: 0139_w056
+    set: primary
+    mesh: PHerc0139/segments/20260115000001-w056_2026011514/mesh/20260115000001-on-20250728140407-9.362um-t2.tifxyz
+    volume: PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr
+    pitch_um: 9.362
+    m7: PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.zarr
+    normal_grids: PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.normal-grids
+    spacing_from: {mesh: PHerc0139/segments/20260127000000-w057_2026012713/mesh/20260127000000-on-20250728140407-9.362um-t2.tifxyz, windings: 1}
+  - name: 0139_w057
+    set: primary
+    mesh: PHerc0139/segments/20260127000000-w057_2026012713/mesh/20260127000000-on-20250728140407-9.362um-t2.tifxyz
+    volume: PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr
+    pitch_um: 9.362
+    m7: PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.zarr
+    normal_grids: PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.normal-grids
+    spacing_from: {mesh: PHerc0139/segments/20260210000000-w058_2026021020/mesh/20260210000000-on-20250728140407-9.362um-t2.tifxyz, windings: 1}
+  - name: 0139_w058
+    set: primary
+    mesh: PHerc0139/segments/20260210000000-w058_2026021020/mesh/20260210000000-on-20250728140407-9.362um-t2.tifxyz
+    volume: PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr
+    pitch_um: 9.362
+    m7: PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.zarr
+    normal_grids: PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.normal-grids
+    spacing_from: {mesh: PHerc0139/segments/20250223000000-w059_2025022312/mesh/20250223000000-on-20250728140407-9.362um-t2.tifxyz, windings: 1}
+  - name: 0139_w059
+    set: primary
+    mesh: PHerc0139/segments/20250223000000-w059_2025022312/mesh/20250223000000-on-20250728140407-9.362um-t2.tifxyz
+    volume: PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr
+    pitch_um: 9.362
+    m7: PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.zarr
+    normal_grids: PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.normal-grids
+    spacing_from: {mesh: PHerc0139/segments/20260210000000-w058_2026021020/mesh/20260210000000-on-20250728140407-9.362um-t2.tifxyz, windings: 1}
+cases:
+  # fill: a hole closed by a 20-cell ring of known cells (2-12 mm across)
+  - {kind: fill, layout: ring, known: 20, size: 40}
+  - {kind: fill, layout: ring, known: 20, size: 80}
+  - {kind: fill, layout: ring, known: 20, size: 160}
+  - {kind: fill, layout: ring, known: 20, size: 250}
+  # extend: beyond a 40-cell known strip, as a tracer grows (2-15 mm)
+  - {kind: extend, layout: side, known: 40, size: 40}
+  - {kind: extend, layout: side, known: 40, size: 80}
+  - {kind: extend, layout: side, known: 40, size: 160}
+  - {kind: extend, layout: side, known: 40, size: 320}
+  # context: how much, and of what layout, for a 160-cell (7.6 mm) target
+  - {kind: context, layout: side, known: 5, size: 160}
+  - {kind: context, layout: side, known: 10, size: 160}
+  - {kind: context, layout: side, known: 20, size: 160}
+  - {kind: context, layout: side, known: 80, size: 160}
+  - {kind: context, layout: between, known: 20, size: 160}
+  - {kind: context, layout: patches, known: 20, size: 160}
+  # correct: the target starts as a wrong draft (perturbations never used in training). Not in the benchmark's 80
+  # cases (they have no area to grow); built because the cases are drawn in this order from one random sequence
+  - {kind: correct, layout: ring, known: 20, size: 160, amp: [4.0, 11.0]}
+  - {kind: correct, layout: ring, known: 20, size: 160, amp: [11.0, 20.0]}
+  - {kind: correct, layout: ring, known: 20, size: 160, perturb: winding}

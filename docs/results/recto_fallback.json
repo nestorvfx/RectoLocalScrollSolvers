@@ -1,0 +1,102 @@
+{
+ "0139_w057__01_fill_ring_k64_s160__L2": {
+  "RF": {
+   "score_fallback": 88.5,
+   "score_kernels": 88.6,
+   "s_fallback": 90.5,
+   "s_kernels": 36.2,
+   "apart_p50": 0.0,
+   "apart_p95": 0.391,
+   "over_6vox": 0.0
+  },
+  "RFS": {
+   "score_fallback": 83.8,
+   "score_kernels": 82.4,
+   "s_fallback": 158.2,
+   "s_kernels": 49.7,
+   "apart_p50": 0.0,
+   "apart_p95": 1.089,
+   "over_6vox": 0.0
+  }
+ },
+ "0139_w057__04_extend_side_k64_s80__L2": {
+  "RF": {
+   "score_fallback": 77.7,
+   "score_kernels": 77.6,
+   "s_fallback": 42.7,
+   "s_kernels": 16.4,
+   "apart_p50": 0.001,
+   "apart_p95": 0.046,
+   "over_6vox": 0.0
+  },
+  "RFS": {
+   "score_fallback": 76.9,
+   "score_kernels": 77.1,
+   "s_fallback": 60.2,
+   "s_kernels": 20.3,
+   "apart_p50": 0.003,
+   "apart_p95": 0.406,
+   "over_6vox": 0.0
+  }
+ },
+ "0139_w058__01_fill_ring_k20_s80__L1": {
+  "RF": {
+   "score_fallback": 94.0,
+   "score_kernels": 93.8,
+   "s_fallback": 21.8,
+   "s_kernels": 6.0,
+   "apart_p50": 0.0,
+   "apart_p95": 0.43,
+   "over_6vox": 0.0
+  },
+  "RFS": {
+   "score_fallback": 90.5,
+   "score_kernels": 89.8,
+   "s_fallback": 36.6,
+   "s_kernels": 8.6,
+   "apart_p50": 0.0,
+   "apart_p95": 1.615,
+   "over_6vox": 0.0
+  }
+ },
+ "0139_w058__05_extend_side_k64_s160__L2": {
+  "RF": {
+   "score_fallback": 62.3,
+   "score_kernels": 60.2,
+   "s_fallback": 140.0,
+   "s_kernels": 46.6,
+   "apart_p50": 0.304,
+   "apart_p95": 4.486,
+   "over_6vox": 0.0193
+  },
+  "RFS": {
+   "score_fallback": 59.1,
+   "score_kernels": 57.6,
+   "s_fallback": 192.7,
+   "s_kernels": 58.0,
+   "apart_p50": 0.445,
+   "apart_p95": 4.721,
+   "over_6vox": 0.0199
+  }
+ },
+ "0139_w059__02_fill_ring_k20_s160__L1": {
+  "RF": {
+   "score_fallback": 94.3,
+   "score_kernels": 94.2,
+   "s_fallback": 84.1,
+   "s_kernels": 24.8,
+   "apart_p50": 0.066,
+   "apart_p95": 1.022,
+   "over_6vox": 0.0007
+  },
+  "RFS": {
+   "score_fallback": 90.2,
+   "score_kernels": 90.6,
+   "s_fallback": 131.6,
+   "s_kernels": 35.2,
+   "apart_p50": 0.146,
+   "apart_p95": 1.62,
+   "over_6vox": 0.0024
+  }
+ }
+}

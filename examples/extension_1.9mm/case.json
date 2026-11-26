@@ -1,0 +1,29 @@
+{
+ "name": "0139_w056__04_extend_side_k40_s40__L1",
+ "surface": "0139_w056",
+ "set": "primary",
+ "kind": "extend",
+ "case": {
+  "kind": "extend",
+  "layout": "side",
+  "known": 40,
+  "size": 40
+ },
+ "location": 1,
+ "origin": [
+  645,
+  542
+ ],
+ "extent": 144,
+ "spacing_vox": 13.363763048331275,
+ "pitch_um": 9.362,
+ "known_cells": 1600,
+ "target_cells": 1600,
+ "target_mm2": 3.6,
+ "methods": [
+  "E",
+  "G",
+  "S5",
+  "GS"
+ ]
+}

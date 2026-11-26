@@ -1,0 +1,35 @@
+{
+ "name": "pherc0211__4_hole_2.3mm",
+ "surface": "pherc0211",
+ "set": "finetune",
+ "kind": "fill",
+ "case": {
+  "kind": "fill",
+  "layout": "ring",
+  "known": 20,
+  "size": 48
+ },
+ "location": 3,
+ "origin": [
+  502,
+  174
+ ],
+ "extent": [
+  112,
+  112
+ ],
+ "spacing_vox": 11.5,
+ "spacing_from": "CT autocorrelation along the normals over the area, median of 224 of 256 sampled cells",
+ "pitch_um": 9.362,
+ "known_cells": 4556,
+ "target_cells": 2304,
+ "target_mm2": 5.19,
+ "methods": [
+  "E",
+  "G",
+  "S5"
+ ],
+ "description": "a 48 x 48-cell hole; input: a 20-cell ring of approved cells",
+ "ground_truth": "sheet.tifxyz (this case's window of it)",
+ "known_trained_share": 0.221
+}

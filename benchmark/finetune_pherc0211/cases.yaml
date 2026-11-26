@@ -1,0 +1,13 @@
+# The fine-tuned SurfNet's test on PHerc0211 (docs/SUPPLEMENTARY.md, section 5): five cases on one approved sheet
+# (sheet.tifxyz). bench.py growpatch / surfnet / score read the surface entry (volume, m7, normal grids).
+bucket: s3://vesuvius-challenge-open-data
+seed: 0
+surfaces:
+- name: pherc0211
+  set: finetune
+  mesh: sheet.tifxyz (this folder)
+  volume: PHerc0211/volumes/20250821151803-9.362um-1.2m-113keV-masked.zarr
+  pitch_um: 9.362
+  m7: PHerc0211/representations/predictions/surfaces/20250821151803-surface-20260413222639-surface-m7-L0-th0.2.zarr
+  normal_grids: PHerc0211/representations/predictions/surfaces/20250821151803-surface-20260413222639-surface-m7-L0-th0.2.normal-grids
+cases: []

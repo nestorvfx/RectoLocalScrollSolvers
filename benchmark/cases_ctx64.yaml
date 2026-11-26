@@ -1,0 +1,53 @@
+# The benchmark at full context (bench.py; docs/SUPPLEMENTARY.md): the same official PHerc0139 windings and the same
+# locations as cases.yaml, with 64 known cells (3 mm) around the area instead of 20 (holes) or 40 (extensions). 64 cells
+# is the context `surfnet correct` uses by default (Settings.margin: known cells within 64 cells of the area join the
+# solve; more is ignored), and it matches the large known layouts of training (train/greens.py: half-planes, corners,
+# strips, rings around a hole inside a 160-cell crop). Not repeated here: 1.9 mm holes, the 15.2 mm extension, the wrong
+# drafts.
+bucket: s3://vesuvius-challenge-open-data
+seed: 1
+locations: {primary: 3}
+surfaces:
+  - name: 0139_w056
+    centres: [[1053, 1162], [717, 614], [233, 1019]]     # the main set's anchors (cases.yaml): the same CT locations
+    set: primary
+    mesh: PHerc0139/segments/20260115000001-w056_2026011514/mesh/20260115000001-on-20250728140407-9.362um-t2.tifxyz
+    volume: PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr
+    pitch_um: 9.362
+    m7: PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.zarr
+    normal_grids: PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.normal-grids
+    spacing_from: {mesh: PHerc0139/segments/20260127000000-w057_2026012713/mesh/20260127000000-on-20250728140407-9.362um-t2.tifxyz, windings: 1}
+  - name: 0139_w057
+    centres: [[1090, 1469], [630, 1251], [1159, 297]]     # the main set's anchors (cases.yaml): the same CT locations
+    set: primary
+    mesh: PHerc0139/segments/20260127000000-w057_2026012713/mesh/20260127000000-on-20250728140407-9.362um-t2.tifxyz
+    volume: PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr
+    pitch_um: 9.362
+    m7: PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.zarr
+    normal_grids: PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.normal-grids
+    spacing_from: {mesh: PHerc0139/segments/20260210000000-w058_2026021020/mesh/20260210000000-on-20250728140407-9.362um-t2.tifxyz, windings: 1}
+  - name: 0139_w058
+    centres: [[921, 1702], [896, 844], [952, 392]]     # the main set's anchors (cases.yaml): the same CT locations
+    set: primary
+    mesh: PHerc0139/segments/20260210000000-w058_2026021020/mesh/20260210000000-on-20250728140407-9.362um-t2.tifxyz
+    volume: PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr
+    pitch_um: 9.362
+    m7: PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.zarr
+    normal_grids: PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.normal-grids
+    spacing_from: {mesh: PHerc0139/segments/20250223000000-w059_2025022312/mesh/20250223000000-on-20250728140407-9.362um-t2.tifxyz, windings: 1}
+  - name: 0139_w059
+    centres: [[612, 845], [725, 1508], [1082, 922]]     # the main set's anchors (cases.yaml): the same CT locations
+    set: primary
+    mesh: PHerc0139/segments/20250223000000-w059_2025022312/mesh/20250223000000-on-20250728140407-9.362um-t2.tifxyz
+    volume: PHerc0139/volumes/20250728140407-9.362um-1.2m-113keV-masked.zarr
+    pitch_um: 9.362
+    m7: PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.zarr
+    normal_grids: PHerc0139/representations/predictions/surfaces/20250728140407-surface-20260413222639-surface-m7-L0-th0.2.normal-grids
+    spacing_from: {mesh: PHerc0139/segments/20260210000000-w058_2026021020/mesh/20260210000000-on-20250728140407-9.362um-t2.tifxyz, windings: 1}
+cases:
+  - {kind: fill, layout: ring, known: 64, size: 80}
+  - {kind: fill, layout: ring, known: 64, size: 160}
+  - {kind: fill, layout: ring, known: 64, size: 250}
+  - {kind: extend, layout: side, known: 64, size: 40}
+  - {kind: extend, layout: side, known: 64, size: 80}
+  - {kind: extend, layout: side, known: 64, size: 160}

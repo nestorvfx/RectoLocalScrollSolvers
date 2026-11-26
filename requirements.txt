@@ -1,0 +1,10 @@
+# Exact versions of the recorded runs (torch 2.10.0 is installed by setup.sh with the CUDA wheels)
+numpy==2.5.3
+scipy==1.18.1
+tifffile==2026.9.20
+imagecodecs==2026.8.16
+zarr==3.4.0
+numcodecs==0.17.0
+pyyaml==6.0.3
+pillow==12.3.0
+pytest==9.1.1

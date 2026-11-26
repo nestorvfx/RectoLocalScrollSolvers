@@ -1,0 +1,29 @@
+{
+ "name": "0139_w059__00_fill_ring_k20_s40__L2",
+ "surface": "0139_w059",
+ "set": "primary",
+ "kind": "fill",
+ "case": {
+  "kind": "fill",
+  "layout": "ring",
+  "known": 20,
+  "size": 40
+ },
+ "location": 2,
+ "origin": [
+  1030,
+  870
+ ],
+ "extent": 104,
+ "spacing_vox": 12.65629699110618,
+ "pitch_um": 9.362,
+ "known_cells": 4800,
+ "target_cells": 1600,
+ "target_mm2": 3.6,
+ "methods": [
+  "E",
+  "G",
+  "S5",
+  "GS"
+ ]
+}

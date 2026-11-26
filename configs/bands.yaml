@@ -1,0 +1,15 @@
+# CT band layout of a training object (data/store.py): about 37 MB per cm2 of sheet.
+spec:
+  fine_half: 32        # +-32 vox at 1 vox
+  fine_step: 1.0
+  ppc: 3               # 3 px per 47.46 um cell
+  coarse_half: 192     # +-192 vox at 2 vox, from level + 1: the context stream's +-96 around frames up to +-80 off
+  coarse_step: 2.0
+  tile: 32
+builder:
+  fine_capacity: 2048  # GPU chunk slots (128^3 = 2 MB each)
+  coarse_capacity: 768
+  group: 16            # tiles per sampling group
+  fetch_batch: 2048    # chunks per s5cmd run
+  budget: 6000         # chunks resident on disk at most (~12 GB)
+  s5cmd_workers: 64

@@ -1,0 +1,39 @@
+# Base training of SurfNet: 42,000 steps on the official ground-truth surfaces (configs/data.yaml).
+# Held out: PHerc0841 (a whole scroll) and PHerc0139 w056-w059 (w056-w057 validation, w058-w059 test); PHerc1667's
+# held-out band of turns is validation.
+seed: 0
+data:
+  root: null               # $SURFNET_DATA
+  include: ["PHerc0139*", "PHerc1667*", "PHercParis4*", "PHerc0814*", "PHerc0009B*", "PHerc0500P2*"]
+  exclude: ["PHerc0841*", "PHerc0139_w056", "PHerc0139_w057", "PHerc0139_w058", "PHerc0139_w059"]
+  region: 320              # cells per pool region (the 160-cell context crop rotated / scaled, plus the ray margin)
+  slots: 24                # regions resident on the GPU
+  refresh_per_step: 1
+  batch: 8
+  prefetch: true
+  min_usable: 64
+  object_weights: {}
+crops:
+  spec: {C: 160, core: 80, fk: 12, fout: 10.0, ck: 48, cout: 80.0, ppc: 3, fine_max: 17.0, ctx_max: 75.0}
+  greens: {far_p: 0.35}    # context layouts (train/greens.py); far_p: share of crops whose green lies away from the core
+  generators: {}           # starts to correct (train/generators.py), default shares
+  p_rejected: 0.25         # share of crops with "rejected" (known wrong) regions
+  trace_channel: none      # the start enters only as the reading frame, never as an input channel
+  p_ext_frame: 0.2         # share of crops whose frame is the membrane extension of green
+  fine_hole_p: 0.2
+  adapt_every: 500         # steps between adaptive generator-share updates
+  curriculum: {c0: 3000, c1: 4000, c2: 8000, p_A: 0.35, p_self: 0.5}
+  probe: null              # leak probes for diagnosis: no_ct | no_green
+model: {f_stem: 32, f_ch: [32, 64, 128, 192, 256], c_stem: 16, c_ch: [16, 32, 64, 128, 192], checkpointing: false}
+loss: {lam_nb: 0.3, lam_ctx_b: 0.5, lam_verify: 0.2}
+optim: {lr: 1.0e-3, min_lr: 1.0e-5, wd: 0.05, warmup: 1000, steps: 42000, clip: 1.0, cooldown_frac: 0.2, cooldown_min: 2500}
+train: {amp: bf16, ema: 0.999, log_every: 50, val_every: 5000, ckpt_every: 2500, patience: 2, min_steps: 30000, keep: 3,
+        async_data: true}
+val:
+  batches: 6
+  sets:
+    - {name: w056_w057, include: ["PHerc0139_w056", "PHerc0139_w057"], split: any, regions: 12}
+    - {name: 1667_heldout, include: ["PHerc1667*"], split: heldout, regions: 12}
+augment: {p_holes: 0.3}
+intensity: {}
+spatial: {scale: [0.85, 1.15], voxel: [0.9, 1.1]}

@@ -1,0 +1,29 @@
+[project]
+name = "surfnet"
+version = "1.0.0"
+description = "SurfNet and the recto local solver: place a papyrus sheet's surface in a CT scan from cells verified correct."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+# torch is installed separately (setup.sh: the CUDA wheels matching the driver)
+dependencies = ["numpy", "scipy", "tifffile", "imagecodecs", "zarr", "numcodecs", "pyyaml", "pillow"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+surfnet = "surfnet.cli:main"
+recto-local-solver = "recto_local_solver.cli:main"
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["surfnet", "recto_local_solver"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120

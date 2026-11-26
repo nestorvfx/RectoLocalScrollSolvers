@@ -1,0 +1,30 @@
+# The 26 of the 80 cases that earlier runs used to choose how surfnet is applied after GrowPatch: its fast settings, the
+# re-solve, keeping GrowPatch's surface where its runs disagree (`ways.py report / robust --exclude` this file). Before
+# the 80 were drawn, the ways other than keep-draft had also run on all 240 cases, from an earlier hand-off from
+# GrowPatch (its seed at the wrong step: fixed, those results discarded).
+0139_w056__00_fill_ring_k64_s80__L2          the 60-case sample: its ways from GrowPatch's surface compared
+0139_w056__02_fill_ring_k20_s160__L2         the 60-case sample: its ways from GrowPatch's surface compared
+0139_w056__04_extend_side_k40_s40__L1        the 60-case sample: its ways from GrowPatch's surface compared
+0139_w056__10_context_side_k20_s160__L2      the 60-case sample: its ways from GrowPatch's surface compared; the 14-case analysis: keep-draft chosen
+0139_w056__13_context_patches_k20_s160__L0   the 60-case sample: its ways from GrowPatch's surface compared
+0139_w057__01_fill_ring_k64_s160__L2         the hardest holes: its fast settings and the re-solve
+0139_w057__04_extend_side_k40_s40__L2        the 60-case sample: its ways from GrowPatch's surface compared
+0139_w057__07_extend_side_k40_s320__L1       the 60-case sample: its ways from GrowPatch's surface compared
+0139_w058__01_fill_ring_k64_s160__L1         the hardest holes: its fast settings and the re-solve
+0139_w058__02_fill_ring_k20_s160__L1         the 14-case analysis: keep-draft chosen
+0139_w058__02_fill_ring_k64_s250__L1         the hardest holes: its fast settings and the re-solve; the 60-case sample: its ways from GrowPatch's surface compared
+0139_w058__04_extend_side_k40_s40__L0        the 14-case analysis: keep-draft chosen
+0139_w058__05_extend_side_k64_s160__L0       the 60-case sample: its ways from GrowPatch's surface compared
+0139_w058__06_extend_side_k40_s160__L0       the 60-case sample: its ways from GrowPatch's surface compared
+0139_w058__07_extend_side_k40_s320__L1       the 60-case sample: its ways from GrowPatch's surface compared
+0139_w058__10_context_side_k20_s160__L0      the 60-case sample: its ways from GrowPatch's surface compared
+0139_w058__11_context_side_k80_s160__L1      the 60-case sample: its ways from GrowPatch's surface compared
+0139_w058__13_context_patches_k20_s160__L2   the 14-case analysis: keep-draft chosen
+0139_w059__02_fill_ring_k20_s160__L0         the 60-case sample: its ways from GrowPatch's surface compared
+0139_w059__02_fill_ring_k64_s250__L0         the hardest holes: its fast settings and the re-solve
+0139_w059__02_fill_ring_k64_s250__L2         the 60-case sample: its ways from GrowPatch's surface compared
+0139_w059__03_extend_side_k64_s40__L1        the 60-case sample: its ways from GrowPatch's surface compared
+0139_w059__05_extend_side_k64_s160__L2       the 60-case sample: its ways from GrowPatch's surface compared
+0139_w059__06_extend_side_k40_s160__L2       the 60-case sample: its ways from GrowPatch's surface compared
+0139_w059__11_context_side_k80_s160__L1      the 14-case analysis: keep-draft chosen
+0139_w059__12_context_between_k20_s160__L1   the 60-case sample: its ways from GrowPatch's surface compared

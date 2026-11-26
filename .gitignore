@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+surfnet_data/
+runs/
+*.pt
+.pytest_cache/
+out/
